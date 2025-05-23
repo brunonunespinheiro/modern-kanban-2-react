@@ -1,70 +1,197 @@
-# Getting Started with Create React App
+# 🚀 Kanban Board - React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Um sistema Kanban moderno e responsivo desenvolvido em React com funcionalidades avançadas de drag & drop e interface intuitiva.
 
-## Available Scripts
+![Kanban Board Preview](https://via.placeholder.com/800x400/3B82F6/ffffff?text=Kanban+Board+Preview)
 
-In the project directory, you can run:
+## ✨ Funcionalidades
 
-### `npm start`
+### 🎯 **Gerenciamento de Tarefas**
+- ✅ **Adicionar tarefas** com título, descrição e seleção de coluna
+- ✅ **Arrastar e soltar** tarefas entre diferentes fases (TO DO → FAZENDO → FEITO)
+- ✅ **Editar nomes das colunas** com interface inline
+- ✅ **Feedback visual** durante o drag & drop
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 📱 **Interface e Visualização**
+- ✅ **Duas visualizações:** Kanban (cards) e Lista (tabela)
+- ✅ **Design responsivo** adaptável a diferentes telas
+- ✅ **Interface moderna** com Tailwind CSS
+- ✅ **Animações suaves** e hover effects
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🎨 **Recursos Visuais**
+- ✅ **Cores diferenciadas** para cada coluna (Azul, Laranja, Verde)
+- ✅ **Ícones intuitivos** com Lucide React
+- ✅ **Modal elegante** para criação de tarefas
+- ✅ **Área de drop destacada** durante o arraste
 
-### `npm test`
+## 🛠️ Tecnologias Utilizadas
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React** 18+ (Hooks: useState)
+- **Lucide React** (Ícones)
+- **Tailwind CSS** (Estilização)
+- **HTML5 Drag & Drop API**
+- **JavaScript ES6+**
 
-### `npm run build`
+## 🚀 Como Executar
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Pré-requisitos
+- Node.js 16+
+- npm ou yarn
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Instalação
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone o repositório**
+```bash
+git clone https://github.com/seu-usuario/kanban-board-react.git
+cd kanban-board-react
+```
 
-### `npm run eject`
+2. **Instale as dependências**
+```bash
+npm install
+# ou
+yarn install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Instale as bibliotecas necessárias**
+```bash
+# Lucide React (ícones)
+npm install lucide-react
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Tailwind CSS
+npm install -D tailwindcss postcss autoprefixer
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Configure o Tailwind CSS**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Crie o arquivo `tailwind.config.js`:
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
 
-## Learn More
+Crie o arquivo `postcss.config.js`:
+```javascript
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Substitua o conteúdo do `src/index.css`:
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. **Execute o projeto**
+```bash
+npm start
+# ou
+yarn start
+```
 
-### Code Splitting
+O aplicativo estará disponível em `http://localhost:3000`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🎮 Como Usar
 
-### Analyzing the Bundle Size
+### ➕ **Adicionar Tarefas**
+1. Clique no botão **"Nova Tarefa"** no cabeçalho ou no **"+"** em qualquer coluna
+2. Preencha o título e descrição
+3. Selecione a coluna desejada
+4. Clique em **"Adicionar"**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 🔄 **Mover Tarefas**
+1. **Clique e segure** qualquer card de tarefa
+2. **Arraste** para a coluna desejada
+3. **Solte** na área destacada
+4. A tarefa será movida automaticamente
 
-### Making a Progressive Web App
+### 📝 **Editar Colunas**
+1. Clique no ícone de **lápis** ao lado do título da coluna
+2. Digite o novo nome
+3. Pressione **Enter** para salvar ou **X** para cancelar
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 👁️ **Alternar Visualização**
+- Use os botões **Grid/Lista** no cabeçalho para alternar entre:
+  - **Kanban:** Visualização em cards
+  - **Lista:** Visualização em tabela
 
-### Advanced Configuration
+## 📂 Estrutura do Projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+src/
+├── App.js              # Componente principal com toda a lógica
+├── index.js            # Ponto de entrada da aplicação
+├── index.css           # Estilos globais (Tailwind)
+└── components/         # (Estrutura para componentes futuros)
+```
 
-### Deployment
+## 🎨 Funcionalidades Detalhadas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### **Drag & Drop**
+- Sistema nativo HTML5 com feedback visual
+- Cards ficam destacados durante o arraste
+- Área de drop com indicação clara
+- Logs no console para debug
 
-### `npm run build` fails to minify
+### **Modal de Criação**
+- Interface limpa e intuitiva
+- Validação de campos obrigatórios
+- Seleção de coluna de destino
+- Fechamento por ESC ou clique fora
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### **Visualização Lista**
+- Tabela responsiva com todas as informações
+- Status colorido por coluna
+- Hover effects nas linhas
+- Colunas organizadas logicamente
+
+## 🔮 Melhorias Futuras
+
+- [ ] Adicionar datas de vencimento
+- [ ] Sistema de prioridades
+- [ ] Filtros e busca
+- [ ] Persistência de dados (localStorage/API)
+- [ ] Drag & drop entre posições na mesma coluna
+- [ ] Tema escuro/claro
+- [ ] Exportação de dados
+
+## 🤝 Contribuindo
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👨‍💻 Autor
+
+**Bruno Nunes Pinheiro**
+
+- Instagram: [@brunonunespinheiro](https://instagram.com/brunonunespinheiro)
+- LinkedIn: [brunonunespinheiro](https://www.linkedin.com/in/brunonunespinheiro/)
+- WhatsApp: [+55 98 98500-6433](https://wa.me/5598985006433)
+
+---
+
+⭐ **Se este projeto te ajudou, não esqueça de dar uma estrela!**
+
+---
+
+*Desenvolvido com ❤️ e muito ☕*
